@@ -6,3 +6,6 @@
 ### 1.1 
 - Make the plugin translation-ready by following WordPress localization and internationalization best practices.
 - Add the functionality for custom icon uploads.
+
+### 1.2
+- Added border size and border color from the options.

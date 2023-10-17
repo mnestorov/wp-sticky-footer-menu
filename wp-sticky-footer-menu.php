@@ -3,7 +3,7 @@
  * Plugin Name: MN - WordPress Sticky Footer Menu
  * Plugin URI: https://github.com/mnestorov/wp-sticky-footer-menu
  * Description: Adds a customizable sticky footer menu to selected pages.
- * Version: 1.1
+ * Version: 1.2
  * Author: Martin Nestorov
  * Author URI: https://github.com/mnestorov
  * Text Domain: mn-wordpress-sticky-footer-menu
@@ -85,6 +85,14 @@ function mn_render_settings_page() {
                     <th scope="row"><?php esc_html_e('Font Size'); ?></th>
                     <td><input type="text" name="mn_font_size" value="<?php echo esc_attr(get_option('mn_font_size', '16px')); ?>" /></td>
                 </tr>
+                <tr valign="top">
+                    <th scope="row"><?php esc_html_e('Border Size'); ?></th>
+                    <td><input type="text" name="mn_border_size" value="<?php echo esc_attr(get_option('mn_border_size', '1px')); ?>" /></td>
+                </tr>
+                <tr valign="top">
+                    <th scope="row"><?php esc_html_e('Border Color'); ?></th>
+                    <td><input type="text" name="mn_border_color" value="<?php echo esc_attr(get_option('mn_border_color', '#000')); ?>" /></td>
+                </tr>
             </table>
             <?php submit_button(); ?>
         </form>
@@ -99,6 +107,8 @@ function mn_register_settings() {
     register_setting('mn-settings-group', 'mn_bg_color');
     register_setting('mn-settings-group', 'mn_text_color');
     register_setting('mn-settings-group', 'mn_font_size');
+    register_setting('mn-settings-group', 'mn_border_size');
+    register_setting('mn-settings-group', 'mn_border_color');
 
     // Handling file upload for menu icons
     if (!empty($_FILES['mn_menu_icons']['name'][0])) {
@@ -131,10 +141,12 @@ function mn_render_footer_menu() {
         $bg_color = get_option('mn_bg_color', '#333');
         $text_color = get_option('mn_text_color', '#fff');
         $font_size = get_option('mn_font_size', '16px');
+        $border_size = get_option('mn_border_size', '1px');  // Default border size to 1px
+        $border_color = get_option('mn_border_color', '#000');  // Default border color to black
         $menu_items = explode(';', get_option('mn_menu_items'));
         $menu_icons = explode(';', get_option('mn_menu_icons'));  // Get menu icons from database
 
-        echo '<div id="mn-footer-menu" style="background-color:' . esc_attr($bg_color) . ';color:' . esc_attr($text_color) . ';font-size:' . esc_attr($font_size) . ';"><ul>';
+        echo '<div id="mn-footer-menu" style="background-color:' . esc_attr($bg_color) . ';color:' . esc_attr($text_color) . ';font-size:' . esc_attr($font_size) . ';border-top:' . esc_attr($border_size) . ' solid ' . esc_attr($border_color) . ';"><ul>';
         foreach ($menu_items as $index => $item) {
             list($label, $url) = explode(',', $item);
             $icon_url = isset($menu_icons[$index]) ? $menu_icons[$index] : '';
