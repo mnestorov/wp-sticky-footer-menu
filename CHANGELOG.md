@@ -18,3 +18,6 @@
 
 ### 1.5
 - Minor bug fixes
+
+### 1.6
+- Provide fields in the settings page for users to add custom CSS and JavaScript to further customize the behavior and appearance of the footer menu.

@@ -14,6 +14,7 @@ Adds a customizable sticky footer menu to selected pages. This plugin allows use
 - Manage visibility of the footer menu on different pages.
 - Customize the appearance of the footer menu, including background color, text color, and font size.
 - Upload custom icons for each menu item.
+- Provide fields in the settings page for users to add custom CSS and JavaScript to further customize the behavior and appearance of the footer menu.
 - Translation-ready for different locales.
 
 ## Installation
@@ -41,6 +42,7 @@ Adds a customizable sticky footer menu to selected pages. This plugin allows use
 - `mn_render_footer_menu()`: Renders the footer menu on the front-end.
 - `mn_should_display_menu()`: Determines if the footer menu should be displayed on the current page.
 - `mn_enqueue_styles()`: Enqueues plugin styles.
+- `mn_enqueue_scripts()`: Enqueues plugin scripts.
 - `mn_load_textdomain()`: Loads the text domain for translation.
 
 ## Error Handling and Debugging

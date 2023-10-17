@@ -3,7 +3,7 @@
  * Plugin Name: MN - WordPress Sticky Footer Menu
  * Plugin URI: https://github.com/mnestorov/wp-sticky-footer-menu
  * Description: Adds a customizable sticky footer menu to selected pages.
- * Version: 1.5
+ * Version: 1.6
  * Author: Martin Nestorov
  * Author URI: https://github.com/mnestorov
  * Text Domain: mn-wordpress-sticky-footer-menu
@@ -93,8 +93,17 @@ function mn_render_settings_page() {
                     <th scope="row"><?php esc_html_e('Border Color'); ?></th>
                     <td><input type="text" name="mn_border_color" value="<?php echo esc_attr(get_option('mn_border_color', '#000')); ?>" /></td>
                 </tr>
+                <!-- Field for entering custom CSS -->
+                <tr valign="top">
+                    <th scope="row"><?php esc_html_e('Custom CSS', 'mn-wordpress-sticky-footer-menu'); ?></th>
+                    <td><textarea name="mn_custom_css" rows="10" cols="50"><?php echo esc_textarea(get_option('mn_custom_css')); ?></textarea></td>
+                </tr>
+                <!-- Field for entering custom JavaScript -->
+                <tr valign="top">
+                    <th scope="row"><?php esc_html_e('Custom JavaScript', 'mn-wordpress-sticky-footer-menu'); ?></th>
+                    <td><textarea name="mn_custom_js" rows="10" cols="50"><?php echo esc_textarea(get_option('mn_custom_js')); ?></textarea></td>
+                </tr>
             </table>
-            <?php submit_button(); ?>
         </form>
     </div>
     <?php
@@ -109,6 +118,8 @@ function mn_register_settings() {
     register_setting('mn-settings-group', 'mn_font_size');
     register_setting('mn-settings-group', 'mn_border_size');
     register_setting('mn-settings-group', 'mn_border_color');
+    register_setting('mn-settings-group', 'mn_custom_css');
+    register_setting('mn-settings-group', 'mn_custom_js');
 
     // Handling file upload for menu icons
     if (!empty($_FILES['mn_menu_icons']['name'][0])) {
