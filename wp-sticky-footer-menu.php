@@ -104,6 +104,7 @@ function mn_render_settings_page() {
                     <td><textarea name="mn_custom_js" rows="10" cols="50"><?php echo esc_textarea(get_option('mn_custom_js')); ?></textarea></td>
                 </tr>
             </table>
+            <?php submit_button(); ?>
         </form>
     </div>
     <?php
