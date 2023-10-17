@@ -7,6 +7,7 @@
     color: white;
     text-align: center;
     padding: 10px 0;
+    display: none; /* Hide the menu initially */
 }
 
 #mn-footer-menu ul {
@@ -25,9 +26,20 @@
     text-decoration: none;
 }
 
+#mn-footer-menu ul li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* Hide menu on screens wider than 768px */
 @media (min-width: 768px) {
     #mn-footer-menu {
-        display: none;
+        display: none !important; /* Override other display properties on larger screens */
     }
+}
+
+/* Show the menu after scrolling */
+#mn-footer-menu.show {
+    display: flex;
 }

@@ -3,7 +3,7 @@
  * Plugin Name: MN - WordPress Sticky Footer Menu
  * Plugin URI: https://github.com/mnestorov/wp-sticky-footer-menu
  * Description: Adds a customizable sticky footer menu to selected pages.
- * Version: 1.3
+ * Version: 1.4
  * Author: Martin Nestorov
  * Author URI: https://github.com/mnestorov
  * Text Domain: mn-wordpress-sticky-footer-menu
@@ -154,7 +154,7 @@ function mn_render_footer_menu() {
             if ($icon_url) {
                 echo '<img src="' . esc_url($icon_url) . '" alt="' . esc_attr(sprintf(__('Icon for %s', 'mn-wordpress-sticky-footer-menu'), $label)) . '" /> ';
             }
-            echo esc_html($label);
+            echo '<span>' . esc_html($label) . '</span>';
             echo '</a></li>';
         }
         echo '</ul></div>';
@@ -173,3 +173,9 @@ function mn_enqueue_styles() {
     wp_enqueue_style('mn-styles', plugins_url('styles.css', __FILE__));
 }
 add_action('wp_enqueue_scripts', 'mn_enqueue_styles');
+
+// Function to enqueue Scripts
+function mn_enqueue_scripts() {
+    wp_enqueue_script('mn-scripts', plugins_url('script.js', __FILE__), array(), null, true);
+}
+add_action('wp_enqueue_scripts', 'mn_enqueue_scripts');

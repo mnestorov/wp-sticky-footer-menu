@@ -12,3 +12,6 @@
 
 ### 1.3
 - Make the menu visible only on mobile devices.
+
+### 1.4
+- Major styling of the menu, added js functionality.
