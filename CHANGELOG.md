@@ -15,3 +15,6 @@
 
 ### 1.4
 - Major styling of the menu, added js functionality.
+
+### 1.5
+- Minor bug fixes
