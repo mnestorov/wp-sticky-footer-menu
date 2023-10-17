@@ -36,9 +36,9 @@ Adds a customizable sticky footer menu to selected pages.
 
 ...
 
-## Changelog
+For a detailed list of changes and updates made to this project, please refer to our [Changelog](./CHANGELOG.md).
 
-...
+---
 
 ## License
 
