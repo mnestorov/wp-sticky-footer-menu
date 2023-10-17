@@ -9,3 +9,6 @@
 
 ### 1.2
 - Added border size and border color from the options.
+
+### 1.3
+- Make the menu visible only on mobile devices.

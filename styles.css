@@ -24,3 +24,10 @@
     color: white;
     text-decoration: none;
 }
+
+/* Hide menu on screens wider than 768px */
+@media (min-width: 768px) {
+    #mn-footer-menu {
+        display: none;
+    }
+}
