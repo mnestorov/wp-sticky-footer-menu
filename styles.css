@@ -1,0 +1,25 @@
+#mn-footer-menu {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+#mn-footer-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#mn-footer-menu li {
+    display: inline;
+    margin: 0 10px;
+}
+
+#mn-footer-menu a {
+    color: white;
+    text-decoration: none;
+}
