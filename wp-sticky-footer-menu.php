@@ -6,6 +6,8 @@
  * Version: 1.7
  * Author: Martin Nestorov
  * Author URI: https://github.com/mnestorov
+ * License: GPL-2.0+
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain: mn-wordpress-sticky-footer-menu
  * Tags: wp, wp-plugin, wp-admin, wordpress, wordpress-plugin, wordpress-menu, wordpress-multisite
  */
