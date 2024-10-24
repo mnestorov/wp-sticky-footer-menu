@@ -10,6 +10,11 @@
  * Tags: wp, wp-plugin, wp-admin, wordpress, wordpress-plugin, wordpress-menu, wordpress-multisite
  */
 
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
 // Register activation and deactivation hooks
 register_activation_hook(__FILE__, 'mn_activate');
 register_deactivation_hook(__FILE__, 'mn_deactivate');
@@ -182,7 +187,7 @@ function mn_should_display_menu() {
 
 // Function to enqueue styles and output custom CSS
 function mn_enqueue_styles() {
-    wp_enqueue_style('mn-styles', plugins_url('styles.css', __FILE__));
+    wp_enqueue_style('mn-styles', plugins_url('css/styles.css', __FILE__));
     
     $custom_css = get_option('mn_custom_css');
     if ($custom_css) {
@@ -193,6 +198,6 @@ add_action('wp_enqueue_scripts', 'mn_enqueue_styles');
 
 // Function to enqueue Scripts
 function mn_enqueue_scripts() {
-    wp_enqueue_script('mn-scripts', plugins_url('script.js', __FILE__), array(), null, true);
+    wp_enqueue_script('mn-scripts', plugins_url('js/script.js', __FILE__), array(), null, true);
 }
 add_action('wp_enqueue_scripts', 'mn_enqueue_scripts');

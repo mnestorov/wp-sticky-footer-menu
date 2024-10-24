@@ -24,3 +24,6 @@
 
 ### 1.7
 - Modifying the mn_enqueue_styles function to output the custom CSS on the frontend.
+
+### 1.8 (2024.10.17)
+- Minor bug fixes
